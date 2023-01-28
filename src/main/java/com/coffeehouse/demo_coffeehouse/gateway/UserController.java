@@ -3,8 +3,8 @@ package com.coffeehouse.demo_coffeehouse.gateway;
 import com.coffeehouse.demo_coffeehouse.model.UserInfo;
 import com.coffeehouse.demo_coffeehouse.service.UserService;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;

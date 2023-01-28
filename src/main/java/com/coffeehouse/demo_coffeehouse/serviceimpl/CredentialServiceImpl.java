@@ -1,9 +1,9 @@
 package com.coffeehouse.demo_coffeehouse.serviceimpl;
 
 import com.coffeehouse.demo_coffeehouse.DAO.CredentialDao;
-import com.coffeehouse.demo_coffeehouse.DAO.UserDao;
 import com.coffeehouse.demo_coffeehouse.model.Credential;
 import com.coffeehouse.demo_coffeehouse.service.CredentialService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

@@ -1,10 +1,11 @@
 package com.coffeehouse.demo_coffeehouse.serviceimpl;
 
 import com.coffeehouse.demo_coffeehouse.DAO.UserDao;
-import com.coffeehouse.demo_coffeehouse.model.Credential;
 import com.coffeehouse.demo_coffeehouse.model.UserInfo;
 import com.coffeehouse.demo_coffeehouse.service.UserService;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

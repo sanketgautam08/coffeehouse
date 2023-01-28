@@ -1,7 +1,5 @@
 package com.coffeehouse.demo_coffeehouse.service;
 
-
-import com.coffeehouse.demo_coffeehouse.model.Credential;
 import com.coffeehouse.demo_coffeehouse.model.UserInfo;
 
 import java.util.List;
