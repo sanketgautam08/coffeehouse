@@ -4,13 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-public class UserInfo{
-
-    Integer userId;
-    String lastName;
-    String firstName;
-    String userName;
+public class Credential {
+    String username;
+    String password;
 }

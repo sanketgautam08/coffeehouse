@@ -19,17 +19,17 @@ public class UserDao {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     private static final String INSERT_USER = """
-            INSERT INTO USERS (ID, LASTNAME, FIRSTNAME, USERNAME)
+            INSERT INTO users (id, lastname, firstname, username)
             VALUES (:userId, :lastName, :firstName, :userName)
             """;
     private static final String GET_ALL_USERS = """
-            SELECT * FROM USERS
+            SELECT * FROM users
             """;
 
     public int addNewUser (UserInfo userInfo){
-        jdbcTemplate.update(INSERT_USER, Map.of("userId", userInfo.userId(), "lastName", userInfo.lastName(), "firstName", userInfo.firstName(), "userName",userInfo.userName()));
-        log.info("User Created with userId :: {}", userInfo.userId());
-        return userInfo.userId();
+        jdbcTemplate.update(INSERT_USER, Map.of("userId", userInfo.getUserId(), "lastName", userInfo.getLastName(), "firstName", userInfo.getFirstName(), "userName",userInfo.getUserName()));
+        log.info("User Created with userId :: {}", userInfo.getUserId());
+        return userInfo.getUserId();
 
     }
 
@@ -48,4 +48,5 @@ public class UserDao {
             return Optional.empty();
         }
     }
+
 }

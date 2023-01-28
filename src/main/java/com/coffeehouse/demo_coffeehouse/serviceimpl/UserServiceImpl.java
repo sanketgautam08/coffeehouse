@@ -1,6 +1,7 @@
 package com.coffeehouse.demo_coffeehouse.serviceimpl;
 
 import com.coffeehouse.demo_coffeehouse.DAO.UserDao;
+import com.coffeehouse.demo_coffeehouse.model.Credential;
 import com.coffeehouse.demo_coffeehouse.model.UserInfo;
 import com.coffeehouse.demo_coffeehouse.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,10 +25,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<List<UserInfo>> getUserById(int userId) {
-        if(!userDao.getUser(userId).isPresent()){
+        if (!userDao.getUser(userId).isPresent()) {
             new UsernameNotFoundException("User not found!!");
             return Optional.empty();
-        }else{
+        } else {
             return userDao.getUser(userId);
         }
     }

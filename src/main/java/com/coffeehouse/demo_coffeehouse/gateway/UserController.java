@@ -27,7 +27,7 @@ public class UserController {
     @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UserInfo>> getAllUsers(){
         List<UserInfo> allUsers = userService.getUsers();
-        return ResponseEntity.status(HttpStatus.CREATED).body(allUsers);
+        return ResponseEntity.status(HttpStatus.OK).body(allUsers);
     }
 
     @GetMapping(path = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

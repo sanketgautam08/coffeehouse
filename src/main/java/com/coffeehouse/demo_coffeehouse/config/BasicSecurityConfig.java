@@ -19,21 +19,21 @@ public class BasicSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public InMemoryUserDetailsManager userDetailsService(){
-        UserDetails user1 = User.builder()
-                .username("Sanket")
-                .password(passwordEncoder().encode("pass"))
-                .roles("USER", "ADMIN")
-                .build();
-        UserDetails user2 = User.builder()
-                .username("Sijan")
-                .password(passwordEncoder().encode("pass"))
-                .roles("USER", "ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(user1, user2);
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsService(){
+//        UserDetails user1 = User.builder()
+//                .username("Sanket")
+//                .password(passwordEncoder().encode("pass"))
+//                .roles("USER", "ADMIN")
+//                .build();
+//        UserDetails user2 = User.builder()
+//                .username("Sijan")
+//                .password(passwordEncoder().encode("pass"))
+//                .roles("USER", "ADMIN")
+//                .build();
+//        return new InMemoryUserDetailsManager(user1, user2);
 
-    }
+//    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -41,7 +41,7 @@ public class BasicSecurityConfig {
                 .csrf().disable()
                 .cors().and()
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/users/**").hasRole("ADMIN")
+                        .requestMatchers("/users/**").hasAnyAuthority("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults());
